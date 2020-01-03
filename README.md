@@ -1,2 +1,0 @@
-# SylviaPlus
-Sylvia+ mobile app
