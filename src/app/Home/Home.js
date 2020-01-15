@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
-import MenuButton from 'app/DrawerNavigator/MenuButton.js'
+import MenuButton from 'app/Components/MenuButton.js'
 
 export default class Home extends Component {
   // toggleDrawer is a static function that controls the drawer menu button
