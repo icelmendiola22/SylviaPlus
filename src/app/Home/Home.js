@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
-import MenuButton from 'app/Components/MenuButton.js'
+import DrawerButton from 'app/Components/DrawerButton.js'
 
 export default class Home extends Component {
   // toggleDrawer is a static function that controls the drawer menu button
@@ -14,7 +14,7 @@ export default class Home extends Component {
       // Drawer menu button
       <View>
         <TouchableOpacity onPress={this.toggleDrawer.bind(this)}>
-          <MenuButton />
+          <DrawerButton />
         </TouchableOpacity>
       </View>
     );

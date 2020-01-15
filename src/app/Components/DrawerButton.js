@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { StyleSheet, Image } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 
-export default class MenuButton extends Component {
+export default class DrawerButton extends Component {
   render () {
     return (
       // Drawer menu icon
@@ -11,7 +11,6 @@ export default class MenuButton extends Component {
         size={35}
         style={styles.menuIcon}
       />
-
     )
   }
 }
