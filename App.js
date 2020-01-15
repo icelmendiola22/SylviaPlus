@@ -1,19 +1,17 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View, Button, Image } from 'react-native';
-import { Ionicons } from '@expo/vector-icons'
-import MenuButton from 'app/DrawerNavigator/MenuButton.js'
+import React from 'react';
 
+// Imports for drawer menu
 import { createAppContainer } from 'react-navigation';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 
+// Imports for drawer menu screens
 import Home from 'app/Home/Home.js';
 import Profile from 'app/Profile/Profile.js';
 import Collections from 'app/Collections/Collections.js';
 import AboutUs from 'app/AboutUs/AboutUs.js';
 import LoginSignup from 'app/LoginSignup/LoginSignup.js';
 
-
-
+// Drawer menu options
 const Drawer = createDrawerNavigator({
   Screen1: {
     screen: Home,
@@ -44,19 +42,6 @@ const Drawer = createDrawerNavigator({
     navigationOptions: {
       drawerLabel: 'Log In | Sign Up',
     },
-  },
-});
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    paddingHorizontal: 10
-  },
-  button: {
-    alignItems: 'center',
-    backgroundColor: '#DDDDDD',
-    padding: 10
   },
 });
 
