@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Image } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 
 export default class MenuButton extends React.Component {
@@ -10,15 +10,16 @@ export default class MenuButton extends React.Component {
         size={32}
         style={styles.menuIcon}
       />
+
     )
   }
 }
 
 const styles = StyleSheet.create({
   menuIcon: {
-    zIndex: 9,
-    position: 'absolute',
     top: 28,
     left: 12,
+    width: 50,
+    height: 50
   }
 })
