@@ -9,11 +9,9 @@ app folder- Includes data folder and feature folders (i.e. home, log-in, shoppin
             the log-in feature folder should contain the file for account handling, log-in page style,
             components, or other such files.
             
-assets folder - Contains images
+assets folder - Contains images and fonts
 
 styles folder - Contains styling that is used app-wide. This provides a single location for changing colors, themes,
                 styles used by multiple pages.
-                
-routes folder - idk what this is for yet, but it seems important hehe.
 
 Enjoy!
