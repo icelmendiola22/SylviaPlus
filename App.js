@@ -4,6 +4,7 @@ import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import { createStackNavigator } from 'react-navigation-stack';
+//import { StackNavigator } from 'react-navigation'; 
 
 // Imports for drawer menu screens
 import Home from 'app/Home/Home.js';
@@ -14,9 +15,12 @@ import AboutUs from 'app/AboutUs/AboutUs.js';
 import ContactUs from 'app/AboutUs/ContactUs.js';
 import Faq from 'app/AboutUs/Faq.js';
 import LoginSignup from 'app/LoginSignup/LoginSignup.js';
+import SearchPage from 'app/SearchPage/SearchPage.js'
 
 // Imports custom drawer
 import SideMenu from 'app/Components/SideMenu.js'
+
+import SearchBar from 'app/Components/SearchBar.js'
 
 // Stack Navigator for the Home option of Navigation Drawer
 const FirstActivity_StackNavigator = createStackNavigator({
@@ -106,6 +110,16 @@ const EigthActivity_StackNavigator = createStackNavigator({
   },
 });
 
+const NinthActivity_StackNavigator = createStackNavigator({
+  // All the screen from the Log In or Sign Up option will be indexed here
+  Ninth: {
+    screen: SearchPage,
+    navigationOptions: {
+      headerShown: false
+    }
+  },
+});
+
 // Drawer menu options
 const Drawer = createDrawerNavigator(
   {
@@ -118,11 +132,13 @@ const Drawer = createDrawerNavigator(
     NavScreen6: { screen: SixthActivity_StackNavigator },
     NavScreen7: { screen: SeventhActivity_StackNavigator },
     NavScreen8: { screen: EigthActivity_StackNavigator },
+    NavScreen9: { screen: NinthActivity_StackNavigator }, 
   },
   {
     //For the Custom sidebar menu we have to provide our CustomSidebarMenu
     contentComponent: SideMenu
   }
 );
+
 
 export default createAppContainer(Drawer);

@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity, TextInput, Button, Image, Saf
 import SegmentedControlTab from 'react-native-segmented-control-tab';
 
 import DrawerButton from 'app/Components/DrawerButton.js'
+import SearchBar from 'app/Components/SearchBar.js'
 
 var width = Dimensions.get('window').width;
 var height = Dimensions.get('window').height;
@@ -23,6 +24,10 @@ export default class LoginSignup extends Component {
   toggleDrawer = () => {
     this.props.navigation.toggleDrawer();
   };
+  // toggleSearch is a static function that navigates to the search page
+  toggleSearch = () => {
+    this.props.navigation.navigate('Ninth');
+  }
 
   render () {
     const { customStyleIndex } = this.state;
@@ -33,6 +38,11 @@ export default class LoginSignup extends Component {
           <TouchableOpacity onPress={this.toggleDrawer.bind(this)}>
             <DrawerButton />
           </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => this.toggleSearch()}>
+          <SearchBar />
+        </TouchableOpacity>
+
         </View>
         <ScrollView>
           <SegmentedControlTab
