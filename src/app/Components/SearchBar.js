@@ -22,8 +22,6 @@ export default class SearchBar extends Component {
 const styles = StyleSheet.create({
   searchIcon: {
     top: -19,
-    left: 240,
-    width: width,
-    height: height,
+    left: 240
   }
 })
