@@ -6,7 +6,7 @@ import { createDrawerNavigator } from 'react-navigation-drawer';
 import { createStackNavigator } from 'react-navigation-stack';
 //import { StackNavigator } from 'react-navigation';
 
-// Imports for drawer menu screens
+// Imports for screen screens
 import Home from 'app/Home/Home.js';
 import Profile from 'app/Profile/Profile.js';
 import SetsAndPrefs from 'app/Profile/SettingsAndPreferences.js';
@@ -17,10 +17,10 @@ import Faq from 'app/AboutUs/Faq.js';
 import LoginSignup from 'app/LoginSignup/LoginSignup.js';
 import SearchPage from 'app/SearchPage/SearchPage.js';
 import ForgotPassword from 'app/LoginSignup/ForgotPassword.js';
+import ShoppingCart from 'app/ShoppingCart/ShoppingCart.js';
 
 // Imports custom drawer
 import SideMenu from 'app/Components/SideMenu.js'
-
 import SearchBar from 'app/Components/SearchBar.js'
 
 // Stack Navigator for the Home option of Navigation Drawer
@@ -131,6 +131,16 @@ const TenthActivity_StackNavigator = createStackNavigator({
   },
 });
 
+// Stack Navigator for the Shopping Cart page
+const EleventhActivity_StackNavigator = createStackNavigator({
+  Eleventh: {
+    screen: ShoppingCart,
+    navigationOptions: {
+      headerShown: false
+    }
+  },
+});
+
 // Drawer menu options
 const Drawer = createDrawerNavigator(
   {
@@ -144,7 +154,8 @@ const Drawer = createDrawerNavigator(
     NavScreen7: { screen: SeventhActivity_StackNavigator },
     NavScreen8: { screen: EigthActivity_StackNavigator },
     NavScreen9: { screen: NinthActivity_StackNavigator },
-    NavScreen10: { screen: TenthActivity_StackNavigator }
+    NavScreen10: { screen: TenthActivity_StackNavigator },
+    NavScreen11: { screen: EleventhActivity_StackNavigator}
   },
   {
     //For the Custom sidebar menu we have to provide our CustomSidebarMenu
