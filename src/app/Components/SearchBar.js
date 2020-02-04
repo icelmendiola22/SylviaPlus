@@ -9,7 +9,7 @@ var height = Dimensions.get('window').height;
 export default class SearchBar extends Component {
   render () {
     return (
-      // Search bar menu icon
+      // Search icon
       <Ionicons
         name="md-search"
         size={30}
@@ -21,7 +21,9 @@ export default class SearchBar extends Component {
 
 const styles = StyleSheet.create({
   searchIcon: {
-    top: -19,
-    left: 240
+    top: 10,
+    left: 12,
+    width: 50,
+    height: 50
   }
 })
