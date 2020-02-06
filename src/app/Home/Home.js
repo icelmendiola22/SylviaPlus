@@ -32,7 +32,7 @@ export default class Home extends Component {
 
   render () {
     return (
-      <View style={{backgroundColor: 'white'}}>
+      <View style={{backgroundColor: 'white', flex: 1}}>
         <SafeAreaView>
           {/* Header */}
           <View style={styles.headerContainer}>
@@ -48,14 +48,11 @@ export default class Home extends Component {
               <View style={styles.logoHeader}>
                 <HeaderLogo />
               </View>
-              {/* Search icon */}
-              <View style={styles.searchIcon}>
+              {/* Search and Cart icon */}
+              <View style={styles.searchCartIcon}>
                 <TouchableOpacity onPress={() => this.toggleSearch()}>
                   <SearchBar />
                 </TouchableOpacity>
-              </View>
-              {/* Shopping cart icon */}
-              <View style={styles.cartIcon}>
                 <TouchableOpacity onPress={() => this.toggleCart()}>
                   <ShoppingCartIcon />
                 </TouchableOpacity>
@@ -63,58 +60,110 @@ export default class Home extends Component {
             </View>
           </View>
           {/* Body */}
-          <ScrollView>
-            {/* Start of flex column */}
-            <View
-              style={{
-              flex: 1,
-              flexDirection: 'column',
-              justifyContent: 'space-between'}}>
-              {/* First flex column for image carousel */}
-              <View style={{height: 300}}>
-                <Swiper
-                  from={0}
-                  minDistanceForAction={0.1}
-                  controlsProps={{
-                    dotsTouchable: true,
-                    prevPos: 'left',
-                    nextPos: 'right',
-                    nextTitle: '',
-                    prevTitle: '',
-                  }}
-                >
-                  {/* Slide 1 */}
-                  <View style={{flex:1,alignItems:"center",justifyContent:"center"}}>
+          <View style={styles.scrollContainer}>
+            <ScrollView>
+              {/* Start of flex column */}
+              <View style={styles.bodyContainer}>
+                {/* First flex column for image carousel */}
+                <View style={styles.swiperContainer}>
+                  <Swiper
+                    from={0}
+                    minDistanceForAction={0.1}
+                    controlsProps={{
+                      dotsTouchable: true,
+                      prevPos: 'left',
+                      nextPos: 'right',
+                      nextTitle: '',
+                      prevTitle: '',
+                    }}
+                  >
+                    {/* Slide 1 */}
+                    <View style={styles.swiperSlide}>
+                      <Image
+                        source={require('assets/testImage1.png')}
+                      />
+                    </View>
+                    {/* Slide 2 */}
+                    <View style={styles.swiperSlide}>
                     <Image
-                      source={require('assets/testImage1.png')}
+                      source={require('assets/testImage2.png')}
+                      style={{width: 350, height: 150}}
+                    />
+                    </View>
+                    {/* Slide 3 */}
+                    <View style={styles.swiperSlide}>
+                      <Image
+                        source={require('assets/testImage3.png')}
+                        style={{resizeMode: 'center'}}
+                      />
+                    </View>
+                  </Swiper>
+                </View>
+                {/* Second flex column for Collections title */}
+                <View style={styles.collectionsTitleContainer}>
+                  <Text style={styles.sectionTitle}>Collections</Text>
+                  <View style={styles.flexDirRow}>
+                    <Text style={styles.viewMoreText}>View more </Text>
+                    <Ionicons
+                      name="ios-arrow-forward"
+                      size={16}
+                      style={styles.viewMoreIcon}
                     />
                   </View>
-                  {/* Slide 2 */}
-                  <View style={{flex:1,alignItems:"center",justifyContent:"center"}}>
-                    <Text>Slide 2</Text>
-                  </View>
-                  {/* Slide 3 */}
-                  <View style={{flex:1,alignItems:"center",justifyContent:"center"}}>
-                    <Text>Slide 3</Text>
-                  </View>
-                </Swiper>
-              </View>
-              {/* Second flex column */}
-              <View style={{flexDirection: 'row', marginVertical: 10, marginHorizontal: 10, justifyContent: 'space-between'}}>
-                <Text style={{fontSize: 20, fontWeight: 'bold', color: '#636363'}}>Collections</Text>
-                <View style={{flexDirection: 'row'}}>
-                  <Text style={{fontSize: 13}}>View more </Text>
-                  <Ionicons
-                    name="ios-arrow-forward"
-                    size={16}
-                    style={{width: 15, height: 25}}
-                  />
+                </View>
+                {/* Third flex column for Collections categories */}
+                {/* Row one of collections categories */}
+                <View style={styles.collectionsRow}>
+                  {/* Exotic Mixes */}
+                  <TouchableOpacity>
+                    <View style={styles.categoryContainer}>
+                      <Image
+                        source={require('assets/exoticMixes.png')}
+                      />
+                      <Text style={styles.categoryText}>Exotic Mixes</Text>
+                    </View>
+                  </TouchableOpacity>
+                  {/* Nature Beauty */}
+                  <TouchableOpacity>
+                    <View style={styles.categoryContainer}>
+                      <Image
+                        source={require('assets/natureBeauty.png')}
+                      />
+                      <Text style={{fontStyle: 'italic', alignSelf: 'flex-start', color: '#636363'}}>Nature Beauty</Text>
+                    </View>
+                  </TouchableOpacity>
+                </View>
+                {/* Row two of collections categories */}
+                <View style={styles.collectionsRow}>
+                  {/* Global Treasure */}
+                  <TouchableOpacity>
+                    <View style={styles.categoryContainer}>
+                      <Image
+                        source={require('assets/globalTreasure.png')}
+                      />
+                      <Text style={styles.categoryText}>Global Treasure</Text>
+                    </View>
+                  </TouchableOpacity>
+                  {/* Heritage Touch */}
+                  <TouchableOpacity>
+                    <View style={styles.categoryContainer}>
+                      <Image
+                        source={require('assets/heritageTouch.png')}
+                      />
+                      <Text style={styles.categoryText}>Heritage Touch</Text>
+                    </View>
+                  </TouchableOpacity>
+                </View>
+                {/* Fourth flex column for Bestsellers title */}
+                <View style={{marginVertical: 10, backgroundColor: 'yellow'}}>
+                  <Text style={styles.sectionTitle}>Bestsellers</Text>
+                </View>
+                {/* Bestsellers slider */}
+                <View>
                 </View>
               </View>
-              {/* Third flex column */}
-              <View style={{height: 50, backgroundColor: 'skyblue'}}></View>
-            </View>
-          </ScrollView>
+            </ScrollView>
+          </View>
         </SafeAreaView>
       </View>
     );
@@ -128,8 +177,7 @@ const styles = StyleSheet.create({
   },
   headerFlexRow: {
     flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between'
+    flexDirection: 'row'
   },
   menuIcon: {
     width: width / 8,
@@ -141,12 +189,64 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  searchIcon: {
-    width: width/8,
+  searchCartIcon: {
+    width: width/8 * 2,
     height: 50,
+    flexDirection: 'row',
+    justifyContent: 'flex-end'
   },
-  cartIcon: {
-    width: width/8,
-    height: 50,
-  }
+  scrollContainer: {
+    height: height,
+    paddingBottom: 75},
+  bodyContainer: {
+    flex: 1,
+    marginHorizontal: 10,
+    flexDirection: 'column'
+  },
+  swiperContainer: {
+    height: 300
+  },
+  swiperSlide: {
+    flex:1,
+    alignItems:"center",
+    justifyContent:"center"
+  },
+  collectionsTitleContainer: {
+    flexDirection: 'row',
+    marginVertical: 10,
+    justifyContent: 'space-between'
+  },
+  sectionTitle: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    color: '#636363'
+  },
+  flexDirRow: {
+    flexDirection: 'row'
+  },
+  viewMoreText: {
+    fontSize: 13
+  },
+  viewMoreIcon: {
+    width: 15,
+    height: 25
+  },
+  collectionsRow: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 20,
+    marginHorizontal: 5
+  },
+  categoryContainer: {
+    width: width/2 - 25,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#F4F4F4'
+  },
+  categoryText: {
+    fontStyle: 'italic',
+    alignSelf: 'flex-start',
+    color: '#636363'
+  },
 });
