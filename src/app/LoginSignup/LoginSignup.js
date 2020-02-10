@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, Button, Image, SafeAreaView, ScrollView, Dimensions } from 'react-native';
 import SegmentedControlTab from 'react-native-segmented-control-tab';
 
-import DrawerButton from 'app/Components/DrawerButton.js'
-import SearchBarIcon from 'app/Components/SearchBarIcon.js'
+import DrawerButton from 'app/Components/DrawerButton.js';
+import HeaderLogo from 'app/Components/HeaderLogo.js'
+import SearchBarIcon from 'app/Components/SearchBarIcon.js';
+import ShoppingCartIcon from 'app/Components/ShoppingCartIcon.js';
 
 var width = Dimensions.get('window').width;
 var height = Dimensions.get('window').height;
@@ -37,119 +39,181 @@ export default class LoginSignup extends Component {
     const { customStyleIndex } = this.state;
 
     return (
-      <View style={styles.container}>
-        <View style={styles.headerContainer}>
-          <TouchableOpacity onPress={this.toggleDrawer.bind(this)}>
-            <DrawerButton />
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={() => this.toggleSearch()}>
-            <SearchBarIcon />
-          </TouchableOpacity>
-        </View>
-
-        <ScrollView>
-          <View style={styles.test}>
-            <SegmentedControlTab
-              values={['Log In', 'Sign Up']}
-              selectedIndex={customStyleIndex}
-              onTabPress={this.handleCustomIndexSelect}
-              borderRadius={8}
-              tabsContainerStyle={styles.tabsContainer}
-              tabStyle={styles.tab}
-              firstTabStyle={styles.firstTab}
-              activeTabStyle={styles.activeTab}
-              tabTextStyle={styles.tabText}
-              activeTabTextStyle={styles.activeTabText}
-            />
-
-            {customStyleIndex === 0 && (
-              <View style={styles.tabContent}>
-                <View style={styles.inputBox}>
-                  <TextInput style={styles.inputText}
-                    placeholder="Email"
-                  />
-                </View>
-                <View style={styles.inputBox}>
-                  <TextInput
-                    secureTextEntry={true}
-                    style={styles.inputText}
-                    placeholder="Password"
-                  />
-                </View>
-                  <TouchableOpacity style={styles.logInSignUpBtn}>
-                    <View>
-                      <Text style={styles.btnText}>Sign In</Text>
-                    </View>
-                  </TouchableOpacity>
-                <View style={styles.forgotBtn}>
-                  <TouchableOpacity
-                    style={styles.forgotPos}
-                    onPress={() => this.toggleForgotPassword()}>
-                    <Text style={styles.forgotText}>Forgot your password?</Text>
-                  </TouchableOpacity>
-                </View>
-              </View>
-            )}
-
-            {customStyleIndex === 1 && (
-              <View style={styles.tabContent}>
-                <View style={styles.inputBox}>
-                  <TextInput style={styles.inputText}
-                    placeholder="First name"
-                  />
-                </View>
-                <View style={styles.inputBox}>
-                  <TextInput style={styles.inputText}
-                    placeholder="Last name"
-                  />
-                </View>
-                <View style={styles.inputBox}>
-                  <TextInput style={styles.inputText}
-                    placeholder="Email"
-                  />
-                </View>
-                <View style={styles.inputBox}>
-                  <TextInput style={styles.inputText}
-                    secureTextEntry={true}
-                    placeholder="Password"
-                  />
-                </View>
-                <TouchableOpacity style={styles.logInSignUpBtn}>
-                  <View>
-                    <Text style={styles.btnText}>Create an account</Text>
-                  </View>
+      <View style={styles.mainContainer}>
+        <SafeAreaView>
+          {/* Header */}
+          <View style={styles.headerContainer}>
+            {/* Start of flex row for header */}
+            <View style={styles.headerFlexRow}>
+              {/* Drawer icon for side menu */}
+              <View style={styles.menuIcon}>
+                <TouchableOpacity onPress={() => this.toggleDrawer()}>
+                  <DrawerButton />
                 </TouchableOpacity>
               </View>
-            )}
+              {/* Logo */}
+              <View style={styles.logoHeader}>
+                <HeaderLogo />
+              </View>
+              {/* Search and Cart icon */}
+              <View style={styles.searchCartIcon}>
+                <TouchableOpacity onPress={() => this.toggleSearch()}>
+                  <SearchBarIcon />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => this.toggleCart()}>
+                  <ShoppingCartIcon />
+                </TouchableOpacity>
+              </View>
+            </View>
           </View>
 
-          <View style={styles.guestContainer}>
-            <Text style={styles.contGuest}>
-              Continue as Guest
-            </Text>
-            <TouchableOpacity style={styles.contGuestBtn}>
-              <View style={styles.rowFlex}>
-                <Text style={styles.btnText}>Continue  </Text>
-                <Image
-                  source={require('assets/rightArrowIcon.png')}
-                  style={{width: 26, height: 23}}
-                />
-              </View>
+        {/*
+          <View style={styles.headerContainer}>
+            <TouchableOpacity onPress={this.toggleDrawer.bind(this)}>
+              <DrawerButton />
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => this.toggleSearch()}>
+              <SearchBarIcon />
             </TouchableOpacity>
           </View>
-        </ScrollView>
+        */}
+          <View style={styles.scrollContainer}>
+            <ScrollView>
+              <View syle={styles.bodyContainer}>
+                <View style={styles.test}>
+                  <SegmentedControlTab
+                    values={['Log In', 'Sign Up']}
+                    selectedIndex={customStyleIndex}
+                    onTabPress={this.handleCustomIndexSelect}
+                    borderRadius={8}
+                    tabsContainerStyle={styles.tabsContainer}
+                    tabStyle={styles.tab}
+                    firstTabStyle={styles.firstTab}
+                    activeTabStyle={styles.activeTab}
+                    tabTextStyle={styles.tabText}
+                    activeTabTextStyle={styles.activeTabText}
+                  />
+
+                  {customStyleIndex === 0 && (
+                    <View style={styles.tabContent}>
+                      <View style={styles.inputBox}>
+                        <TextInput style={styles.inputText}
+                          placeholder="Email"
+                        />
+                      </View>
+                      <View style={styles.inputBox}>
+                        <TextInput
+                          secureTextEntry={true}
+                          style={styles.inputText}
+                          placeholder="Password"
+                        />
+                      </View>
+                        <TouchableOpacity style={styles.logInSignUpBtn}>
+                          <View>
+                            <Text style={styles.btnText}>Sign In</Text>
+                          </View>
+                        </TouchableOpacity>
+                      <View style={styles.forgotBtn}>
+                        <TouchableOpacity
+                          style={styles.forgotPos}
+                          onPress={() => this.toggleForgotPassword()}>
+                          <Text style={styles.forgotText}>Forgot your password?</Text>
+                        </TouchableOpacity>
+                      </View>
+                    </View>
+                  )}
+
+                  {customStyleIndex === 1 && (
+                    <View style={styles.tabContent}>
+                      <View style={styles.inputBox}>
+                        <TextInput style={styles.inputText}
+                          placeholder="First name"
+                        />
+                      </View>
+                      <View style={styles.inputBox}>
+                        <TextInput style={styles.inputText}
+                          placeholder="Last name"
+                        />
+                      </View>
+                      <View style={styles.inputBox}>
+                        <TextInput style={styles.inputText}
+                          placeholder="Email"
+                        />
+                      </View>
+                      <View style={styles.inputBox}>
+                        <TextInput style={styles.inputText}
+                          secureTextEntry={true}
+                          placeholder="Password"
+                        />
+                      </View>
+                      <TouchableOpacity style={styles.logInSignUpBtn}>
+                        <View>
+                          <Text style={styles.btnText}>Create an account</Text>
+                        </View>
+                      </TouchableOpacity>
+                    </View>
+                  )}
+                </View>
+
+                <View style={styles.guestContainer}>
+                  <Text style={styles.contGuest}>
+                    Continue as Guest
+                  </Text>
+                  <TouchableOpacity style={styles.contGuestBtn}>
+                    <View style={styles.rowFlex}>
+                      <Text style={styles.btnText}>Continue  </Text>
+                      <Image
+                        source={require('assets/rightArrowIcon.png')}
+                        style={{width: 26, height: 23}}
+                      />
+                    </View>
+                  </TouchableOpacity>
+                </View>
+              </View>
+            </ScrollView>
+          </View>
+        </SafeAreaView>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  mainContainer: {
     flex: 1
   },
   headerContainer: {
-    height: 70
+    height: 50
+  },
+  headerFlexRow: {
+    flex: 1,
+    flexDirection: 'row'
+  },
+  menuIcon: {
+    width: width / 8,
+    height: 50,
+  },
+  logoHeader: {
+    width: width/8 * 5,
+    height: 50,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  searchCartIcon: {
+    width: width/8 * 2,
+    height: 50,
+    flexDirection: 'row',
+    justifyContent: 'flex-end'
+  },
+  scrollContainer: {
+    height: height,
+    paddingBottom: 75
+  },
+  bodyContainer: {
+    flex: 1,
+    marginHorizontal: 10,
+    flexDirection: 'column'
   },
   test: {
     backgroundColor: 'white',
