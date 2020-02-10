@@ -39,7 +39,7 @@ export default class LoginSignup extends Component {
             <DrawerButton />
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => this.toggleSearch()}>
+        <TouchableOpacity onPress={() => this.toggleSearch()}>
           <SearchBar />
         </TouchableOpacity>
 
