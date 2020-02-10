@@ -21,7 +21,7 @@ import ShoppingCart from 'app/ShoppingCart/ShoppingCart.js';
 
 // Imports custom drawer
 import SideMenu from 'app/Components/SideMenu.js'
-import SearchBar from 'app/Components/SearchBar.js'
+import SearchBarIcon from 'app/Components/SearchBarIcon.js'
 
 // Stack Navigator for the Home option of Navigation Drawer
 const FirstActivity_StackNavigator = createStackNavigator({

@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity, TextInput, Button, Image, Saf
 import SegmentedControlTab from 'react-native-segmented-control-tab';
 
 import DrawerButton from 'app/Components/DrawerButton.js'
-import SearchBar from 'app/Components/SearchBar.js'
+import SearchBarIcon from 'app/Components/SearchBarIcon.js'
 
 var width = Dimensions.get('window').width;
 var height = Dimensions.get('window').height;
@@ -44,7 +44,7 @@ export default class LoginSignup extends Component {
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => this.toggleSearch()}>
-            <SearchBar />
+            <SearchBarIcon />
           </TouchableOpacity>
         </View>
 

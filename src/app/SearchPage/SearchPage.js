@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput} from 'react-native';
 import BackButton from 'app/Components/BackButton.js'
 import { SearchBar } from 'react-native-elements';
+import SearchBarIcon from 'app/Components/SearchBarIcon.js';
 
 
 export default class SearchPage extends React.Component {
@@ -33,7 +34,9 @@ export default class SearchPage extends React.Component {
           <View style={styles.inputBox}>
             <TextInput style={styles.inputText}
             placeholder = 'Search'
+            
             />
+          <SearchBarIcon />
           </View>
 
 
@@ -48,10 +51,12 @@ const styles = StyleSheet.create({
     flex: 1
   },
   inputBox: {
-    height: 49,
+    height: 40,
     borderColor: '#CAC1C1',
-    borderWidth: 1,
+    borderWidth: 0,
     borderRadius: 7,
+    borderBottomWidth: 1,
+    borderColor: 'black',
     marginVertical: -30,
     marginHorizontal: 35,
     right: -15,

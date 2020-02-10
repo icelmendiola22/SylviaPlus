@@ -6,7 +6,7 @@ import { Ionicons } from '@expo/vector-icons'
 var width = Dimensions.get('window').width;
 var height = Dimensions.get('window').height;
 
-export default class SearchBar extends Component {
+export default class SearchBarIcon extends Component {
   render () {
     return (
       // Search icon

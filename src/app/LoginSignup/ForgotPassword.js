@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, ScrollView, Dimensions } from 'react-native';
 
 import DrawerButton from 'app/Components/DrawerButton.js'
-import SearchBar from 'app/Components/SearchBar.js'
+import SearchBarIcon from 'app/Components/SearchBarIcon.js'
 
 export default class ForgotPassword extends Component {
   // toggleDrawer is a static function that controls the drawer menu button
@@ -27,7 +27,7 @@ export default class ForgotPassword extends Component {
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => this.toggleSearch()}>
-            <SearchBar />
+            <SearchBarIcon />
           </TouchableOpacity>
         </View>
 

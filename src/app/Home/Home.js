@@ -9,7 +9,7 @@ import { Ionicons } from '@expo/vector-icons';
 // Import components for header
 import DrawerButton from 'app/Components/DrawerButton.js';
 import HeaderLogo from 'app/Components/HeaderLogo.js';
-import SearchBar from 'app/Components/SearchBar.js';
+import SearchBarIcon from 'app/Components/SearchBarIcon.js';
 import ShoppingCartIcon from 'app/Components/ShoppingCartIcon.js';
 
 // Get width of iPhone/Android screen
@@ -51,7 +51,7 @@ export default class Home extends Component {
               {/* Search and Cart icon */}
               <View style={styles.searchCartIcon}>
                 <TouchableOpacity onPress={() => this.toggleSearch()}>
-                  <SearchBar />
+                  <SearchBarIcon />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => this.toggleCart()}>
                   <ShoppingCartIcon />
