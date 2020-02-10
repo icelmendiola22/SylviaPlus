@@ -67,6 +67,7 @@ const styles = StyleSheet.create({
     height: 49
   },
   searchIconPosition: {
+    flex:1,
     marginVertical: -14,
     marginHorizontal: 260,
   }
