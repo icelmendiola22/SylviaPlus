@@ -34,14 +34,13 @@ export default class SearchPage extends React.Component {
           <View style={styles.inputBox}>
             <TextInput style={styles.inputText}
             placeholder = 'Search'
-            
             />
-          <SearchBarIcon />
           </View>
-
-
-        
+      <View style ={styles.searchIconPosition}>
+        <SearchBarIcon />
+      </View>
     </View>
+    
     );
   }
 }
@@ -62,9 +61,15 @@ const styles = StyleSheet.create({
     right: -15,
   },
   inputText: {
+    fontFamily: 'HelveticaNeue',
+    fontSize: 20,
     marginHorizontal: 10,
     height: 49
   },
+  searchIconPosition: {
+    marginVertical: -14,
+    marginHorizontal: 260,
+  }
   // tabContent: {
   //   color: '#444444',
   //   backgroundColor: 'white',
