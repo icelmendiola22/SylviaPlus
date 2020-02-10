@@ -32,7 +32,7 @@ export default class Home extends Component {
 
   render () {
     return (
-      <View style={{backgroundColor: 'white', flex: 1}}>
+      <View style={styles.mainContainer}>
         <SafeAreaView>
           {/* Header */}
           <View style={styles.headerContainer}>
@@ -172,6 +172,10 @@ export default class Home extends Component {
 
 const styles = StyleSheet.create({
   // Not using this style so might need to delete later on
+  mainContainer: {
+    backgroundColor: 'white',
+    flex: 1
+  },
   headerContainer: {
     height: 50
   },
@@ -197,7 +201,8 @@ const styles = StyleSheet.create({
   },
   scrollContainer: {
     height: height,
-    paddingBottom: 75},
+    paddingBottom: 75
+  },
   bodyContainer: {
     flex: 1,
     marginHorizontal: 10,
