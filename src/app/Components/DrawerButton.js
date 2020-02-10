@@ -17,7 +17,7 @@ export default class DrawerButton extends Component {
 
 const styles = StyleSheet.create({
   menuIcon: {
-    top: 28,
+    top: 10,
     left: 12,
     width: 50,
     height: 50

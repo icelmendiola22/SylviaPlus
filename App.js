@@ -4,9 +4,9 @@ import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import { createStackNavigator } from 'react-navigation-stack';
-//import { StackNavigator } from 'react-navigation'; 
+//import { StackNavigator } from 'react-navigation';
 
-// Imports for drawer menu screens
+// Imports for screen screens
 import Home from 'app/Home/Home.js';
 import Profile from 'app/Profile/Profile.js';
 import SetsAndPrefs from 'app/Profile/SettingsAndPreferences.js';
@@ -15,11 +15,12 @@ import AboutUs from 'app/AboutUs/AboutUs.js';
 import ContactUs from 'app/AboutUs/ContactUs.js';
 import Faq from 'app/AboutUs/Faq.js';
 import LoginSignup from 'app/LoginSignup/LoginSignup.js';
-import SearchPage from 'app/SearchPage/SearchPage.js'
+import SearchPage from 'app/SearchPage/SearchPage.js';
+import ForgotPassword from 'app/LoginSignup/ForgotPassword.js';
+import ShoppingCart from 'app/ShoppingCart/ShoppingCart.js';
 
 // Imports custom drawer
 import SideMenu from 'app/Components/SideMenu.js'
-
 import SearchBar from 'app/Components/SearchBar.js'
 
 // Stack Navigator for the Home option of Navigation Drawer
@@ -110,10 +111,30 @@ const EigthActivity_StackNavigator = createStackNavigator({
   },
 });
 
+// Stack Navigator for the Search page
 const NinthActivity_StackNavigator = createStackNavigator({
-  // All the screen from the Log In or Sign Up option will be indexed here
   Ninth: {
     screen: SearchPage,
+    navigationOptions: {
+      headerShown: false
+    }
+  },
+});
+
+// Stack Navigator for the Forgot Password page
+const TenthActivity_StackNavigator = createStackNavigator({
+  Tenth: {
+    screen: ForgotPassword,
+    navigationOptions: {
+      headerShown: false
+    }
+  },
+});
+
+// Stack Navigator for the Shopping Cart page
+const EleventhActivity_StackNavigator = createStackNavigator({
+  Eleventh: {
+    screen: ShoppingCart,
     navigationOptions: {
       headerShown: false
     }
@@ -132,7 +153,9 @@ const Drawer = createDrawerNavigator(
     NavScreen6: { screen: SixthActivity_StackNavigator },
     NavScreen7: { screen: SeventhActivity_StackNavigator },
     NavScreen8: { screen: EigthActivity_StackNavigator },
-    NavScreen9: { screen: NinthActivity_StackNavigator }, 
+    NavScreen9: { screen: NinthActivity_StackNavigator },
+    NavScreen10: { screen: TenthActivity_StackNavigator },
+    NavScreen11: { screen: EleventhActivity_StackNavigator}
   },
   {
     //For the Custom sidebar menu we have to provide our CustomSidebarMenu

@@ -6,12 +6,12 @@ import { Ionicons } from '@expo/vector-icons'
 var width = Dimensions.get('window').width;
 var height = Dimensions.get('window').height;
 
-export default class SearchBar extends Component {
+export default class ShoppingCartIcon extends Component {
   render () {
     return (
       // Search icon
       <Ionicons
-        name="md-search"
+        name="md-cart"
         size={30}
         style={styles.searchIcon}
       />
