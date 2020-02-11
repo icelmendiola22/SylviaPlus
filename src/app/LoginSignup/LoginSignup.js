@@ -66,22 +66,12 @@ export default class LoginSignup extends Component {
               </View>
             </View>
           </View>
-
-        {/*
-          <View style={styles.headerContainer}>
-            <TouchableOpacity onPress={this.toggleDrawer.bind(this)}>
-              <DrawerButton />
-            </TouchableOpacity>
-
-            <TouchableOpacity onPress={() => this.toggleSearch()}>
-              <SearchBarIcon />
-            </TouchableOpacity>
-          </View>
-        */}
+          {/* Start of body */}
           <View style={styles.scrollContainer}>
             <ScrollView>
               <View syle={styles.bodyContainer}>
                 <View style={styles.test}>
+                  {/* Log In and Sign up control tab */}
                   <SegmentedControlTab
                     values={['Log In', 'Sign Up']}
                     selectedIndex={customStyleIndex}
@@ -94,14 +84,16 @@ export default class LoginSignup extends Component {
                     tabTextStyle={styles.tabText}
                     activeTabTextStyle={styles.activeTabText}
                   />
-
+                  {/* Log In tab */}
                   {customStyleIndex === 0 && (
                     <View style={styles.tabContent}>
+                      {/* Email input box */}
                       <View style={styles.inputBox}>
                         <TextInput style={styles.inputText}
                           placeholder="Email"
                         />
                       </View>
+                      {/* Password input box */}
                       <View style={styles.inputBox}>
                         <TextInput
                           secureTextEntry={true}
@@ -109,11 +101,13 @@ export default class LoginSignup extends Component {
                           placeholder="Password"
                         />
                       </View>
-                        <TouchableOpacity style={styles.logInSignUpBtn}>
-                          <View>
-                            <Text style={styles.btnText}>Sign In</Text>
-                          </View>
-                        </TouchableOpacity>
+                      {/* Log in button */}
+                      <TouchableOpacity style={styles.logInSignUpBtn}>
+                        <View>
+                          <Text style={styles.btnText}>Sign In</Text>
+                        </View>
+                      </TouchableOpacity>
+                      {/* Forgot password button */}
                       <View style={styles.forgotBtn}>
                         <TouchableOpacity
                           style={styles.forgotPos}
@@ -123,30 +117,35 @@ export default class LoginSignup extends Component {
                       </View>
                     </View>
                   )}
-
+                  {/* Sign up tab */}
                   {customStyleIndex === 1 && (
                     <View style={styles.tabContent}>
+                      {/* First name input box */}
                       <View style={styles.inputBox}>
                         <TextInput style={styles.inputText}
                           placeholder="First name"
                         />
                       </View>
+                      {/* Last name input box */}
                       <View style={styles.inputBox}>
                         <TextInput style={styles.inputText}
                           placeholder="Last name"
                         />
                       </View>
+                      {/* Email input box */}
                       <View style={styles.inputBox}>
                         <TextInput style={styles.inputText}
                           placeholder="Email"
                         />
                       </View>
+                      {/* Password input box */}
                       <View style={styles.inputBox}>
                         <TextInput style={styles.inputText}
                           secureTextEntry={true}
                           placeholder="Password"
                         />
                       </View>
+                      {/* Sign up button */}
                       <TouchableOpacity style={styles.logInSignUpBtn}>
                         <View>
                           <Text style={styles.btnText}>Create an account</Text>
@@ -155,7 +154,7 @@ export default class LoginSignup extends Component {
                     </View>
                   )}
                 </View>
-
+                {/* Continue as guest option */}
                 <View style={styles.guestContainer}>
                   <Text style={styles.contGuest}>
                     Continue as Guest
