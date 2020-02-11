@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, Button, Image, SafeAreaView, ScrollView, Dimensions } from 'react-native';
 import SegmentedControlTab from 'react-native-segmented-control-tab';
-
+// Import components for header
 import DrawerButton from 'app/Components/DrawerButton.js';
-import HeaderLogo from 'app/Components/HeaderLogo.js'
+import HeaderLogo from 'app/Components/HeaderLogo.js';
 import SearchBarIcon from 'app/Components/SearchBarIcon.js';
 import ShoppingCartIcon from 'app/Components/ShoppingCartIcon.js';
 
+// Get width of iPhone/Android screen
 var width = Dimensions.get('window').width;
 var height = Dimensions.get('window').height;
 
@@ -33,6 +34,10 @@ export default class LoginSignup extends Component {
   // toggleSearch is a static function that navigates to the forgot password page
   toggleForgotPassword = () => {
     this.props.navigation.navigate('Tenth');
+  }
+  // toggleSearch is a static function that navigates to the shopping cart page
+  toggleCart = () => {
+    this.props.navigation.navigate('Eleventh');
   }
 
   render () {
@@ -211,7 +216,6 @@ const styles = StyleSheet.create({
   },
   bodyContainer: {
     flex: 1,
-    marginHorizontal: 10,
     flexDirection: 'column'
   },
   test: {
