@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, TextInput, ScrollView, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, ScrollView, SafeAreaView, Dimensions } from 'react-native';
+// Import components for header
+import DrawerButton from 'app/Components/DrawerButton.js';
+import HeaderLogo from 'app/Components/HeaderLogo.js';
+import SearchBarIcon from 'app/Components/SearchBarIcon.js';
+import ShoppingCartIcon from 'app/Components/ShoppingCartIcon.js';
 
-import DrawerButton from 'app/Components/DrawerButton.js'
-import SearchBarIcon from 'app/Components/SearchBarIcon.js'
+// Get width of iPhone/Android screen
+var width = Dimensions.get('window').width;
+var height = Dimensions.get('window').height;
 
 export default class ForgotPassword extends Component {
   // toggleDrawer is a static function that controls the drawer menu button
@@ -17,59 +23,119 @@ export default class ForgotPassword extends Component {
   toggleLogInSignUp = () => {
     this.props.navigation.navigate('Eigth');
   }
+  // toggleSearch is a static function that navigates to the shopping cart page
+  toggleCart = () => {
+    this.props.navigation.navigate('Eleventh');
+  }
 
   render () {
     return (
-      <View style={styles.container}>
-        <View style={styles.headerContainer}>
-          <TouchableOpacity onPress={this.toggleDrawer.bind(this)}>
-            <DrawerButton />
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={() => this.toggleSearch()}>
-            <SearchBarIcon />
-          </TouchableOpacity>
-        </View>
-
-        <ScrollView>
-          <View style={styles.tabContent}>
-            <Text style={styles.Title}>Reset your</Text>
-            <Text style={styles.Title}>Password</Text>
-            <Text style={styles.caption}>
-              We will send you an email to reset your password.
-            </Text>
-            <View style={styles.inputBox}>
-              <TextInput style={styles.inputText}
-                placeholder="Email"
-              />
-            </View>
-            <TouchableOpacity style={styles.submitBtn}>
-              <View>
-                <Text style={styles.btnText}>Create an account</Text>
+      <View style={styles.mainContainer}>
+        <SafeAreaView>
+          {/* Header */}
+          <View style={styles.headerContainer}>
+            {/* Start of flex row for header */}
+            <View style={styles.headerFlexRow}>
+              {/* Drawer icon for side menu */}
+              <View style={styles.menuIcon}>
+                <TouchableOpacity onPress={() => this.toggleDrawer()}>
+                  <DrawerButton />
+                </TouchableOpacity>
               </View>
-            </TouchableOpacity>
-            <View style={styles.cancelBtn}>
-              <TouchableOpacity
-                style={styles.cancelPos}
-                onPress={() => this.toggleLogInSignUp()}>
-                <Text style={styles.cancelText}>Cancel</Text>
-              </TouchableOpacity>
+              {/* Logo */}
+              <View style={styles.logoHeader}>
+                <HeaderLogo />
+              </View>
+              {/* Search and Cart icon */}
+              <View style={styles.searchCartIcon}>
+                <TouchableOpacity onPress={() => this.toggleSearch()}>
+                  <SearchBarIcon />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => this.toggleCart()}>
+                  <ShoppingCartIcon />
+                </TouchableOpacity>
+              </View>
             </View>
           </View>
-        </ScrollView>
+          {/* Start of body */}
+          <View style={styles.scrollContainer}>
+            <ScrollView>
+              <View syle={styles.bodyContainer}>
+                {/* Reset password card */}
+                <View style={styles.cardContainer}>
+                  {/* Title */}
+                  <Text style={styles.Title}>Reset your</Text>
+                  <Text style={styles.Title}>Password</Text>
+                  {/* Caption */}
+                  <Text style={styles.caption}>
+                    We will send you an email to reset your password.
+                  </Text>
+                  {/* Email input box */}
+                  <View style={styles.inputBox}>
+                    <TextInput style={styles.inputText}
+                      placeholder="Email"
+                    />
+                  </View>
+                  {/* Create an account button */}
+                  <TouchableOpacity style={styles.submitBtn}>
+                    <View>
+                      <Text style={styles.btnText}>Create an account</Text>
+                    </View>
+                  </TouchableOpacity>
+                  {/* Cancel button */}
+                  <View style={styles.cancelBtn}>
+                    <TouchableOpacity
+                      style={styles.cancelPos}
+                      onPress={() => this.toggleLogInSignUp()}>
+                      <Text style={styles.cancelText}>Cancel</Text>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+              </View>
+            </ScrollView>
+          </View>
+        </SafeAreaView>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  mainContainer: {
     flex: 1
   },
   headerContainer: {
-    height: 70
+    height: 50
   },
-  tabContent: {
+  headerFlexRow: {
+    flex: 1,
+    flexDirection: 'row'
+  },
+  menuIcon: {
+    width: width / 8,
+    height: 50,
+  },
+  logoHeader: {
+    width: width/8 * 5,
+    height: 50,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  searchCartIcon: {
+    width: width/8 * 2,
+    height: 50,
+    flexDirection: 'row',
+    justifyContent: 'flex-end'
+  },
+  scrollContainer: {
+    height: height,
+    paddingBottom: 75
+  },
+  bodyContainer: {
+    flex: 1,
+    flexDirection: 'column'
+  },
+  cardContainer: {
     backgroundColor: 'white',
     fontSize: 18,
     marginTop: 45,
