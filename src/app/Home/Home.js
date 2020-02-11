@@ -5,7 +5,6 @@ import { NavigationActions } from 'react-navigation';
 import Swiper from 'react-native-web-swiper';
 // Import Ionicons for icons
 import { Ionicons } from '@expo/vector-icons';
-
 // Import components for header
 import DrawerButton from 'app/Components/DrawerButton.js';
 import HeaderLogo from 'app/Components/HeaderLogo.js';
@@ -24,11 +23,11 @@ export default class Home extends Component {
   // toggleSearch is a static function that navigates to the search page
   toggleSearch = () => {
     this.props.navigation.navigate('Ninth');
-  }
+  };
   // toggleSearch is a static function that navigates to the shopping cart page
   toggleCart = () => {
     this.props.navigation.navigate('Eleventh');
-  }
+  };
 
   render () {
     return (
