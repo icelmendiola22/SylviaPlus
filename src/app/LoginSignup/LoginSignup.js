@@ -286,7 +286,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     backgroundColor: 'white',
     borderRadius: 8,
-    marginBottom: 40
+    marginBottom: 20
   },
   contGuest: {
     fontSize: 22,
