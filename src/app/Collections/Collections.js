@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default class Collections extends React.Component {
+export default class Collections extends Component {
   render () {
     return (
       <View style={styles.container}>
