@@ -30,15 +30,29 @@ export default class Home extends Component {
   toggleCart = () => {
     this.props.navigation.navigate('Eleventh');
   };
+  // toggleSearch is a static function that navigates to the category products page
+  toggleCategoryProds= () => {
+    this.props.navigation.navigate('Twelfth');
+  };
+  // toggleSearch is a static function that navigates to the product page
+  toggleProdPage= () => {
+    this.props.navigation.navigate('Thirtheenth');
+  };
+  // toggleSearch is a static function that navigates to the collections page
+  toggleCollections = () => {
+    this.props.navigation.navigate('Fourth');
+  };
   // Renders cards under Bestsellers section
   _renderBestsellers(item) {
       return (
         <View style={styles.cardContainer}>
-          <View style={styles.card}>
-            <Image source={item.img} style={styles.cardImage} />
-            <Text style={styles.cardTitle}>{item.name}</Text>
-            <Text style={styles.cardPrice}>{item.price}</Text>
-          </View>
+          <TouchableOpacity onPress={() => this.toggleProdPage()}>
+            <View style={styles.card}>
+              <Image source={item.img} style={styles.cardImage} />
+              <Text style={styles.cardTitle}>{item.name}</Text>
+              <Text style={styles.cardPrice}>{item.price}</Text>
+            </View>
+          </TouchableOpacity>
         </View>
       );
   }
@@ -92,43 +106,51 @@ export default class Home extends Component {
                   >
                     {/* Slide 1 */}
                     <View style={styles.swiperSlide}>
-                      <Image
-                        source={require('assets/testImage1.png')}
-                      />
+                      <TouchableOpacity onPress={() => this.toggleProdPage()}>
+                        <Image
+                          source={require('assets/testImage1.png')}
+                        />
+                      </TouchableOpacity>
                     </View>
                     {/* Slide 2 */}
                     <View style={styles.swiperSlide}>
-                    <Image
-                      source={require('assets/testImage2.png')}
-                      style={{width: 350, height: 150}}
-                    />
+                      <TouchableOpacity onPress={() => this.toggleProdPage()}>
+                        <Image
+                          source={require('assets/testImage2.png')}
+                          style={{width: 350, height: 150}}
+                        />
+                      </TouchableOpacity>
                     </View>
                     {/* Slide 3 */}
                     <View style={styles.swiperSlide}>
-                      <Image
-                        source={require('assets/testImage3.png')}
-                        style={{resizeMode: 'center'}}
-                      />
+                      <TouchableOpacity onPress={() => this.toggleProdPage()}>
+                        <Image
+                          source={require('assets/testImage3.png')}
+                          style={{resizeMode: 'center'}}
+                        />
+                      </TouchableOpacity>
                     </View>
                   </Swiper>
                 </View>
                 {/* Second flex column for Collections title */}
                 <View style={styles.collectionsTitleContainer}>
                   <Text style={styles.sectionTitle}>Collections</Text>
-                  <View style={styles.flexDirRow}>
-                    <Text style={styles.viewMoreText}>View more </Text>
-                    <Ionicons
-                      name="ios-arrow-forward"
-                      size={16}
-                      style={styles.viewMoreIcon}
-                    />
+                  <TouchableOpacity onPress={() => this.toggleCollections()}>
+                    <View style={styles.flexDirRow}>
+                      <Text style={styles.viewMoreText}>View more </Text>
+                      <Ionicons
+                        name="ios-arrow-forward"
+                        size={16}
+                        style={styles.viewMoreIcon}
+                      />
                   </View>
+                  </TouchableOpacity>
                 </View>
                 {/* Third flex column for Collections categories */}
                 {/* Row one of collections categories */}
                 <View style={styles.collectionsRow}>
                   {/* Exotic Mixes */}
-                  <TouchableOpacity>
+                  <TouchableOpacity onPress={() => this.toggleCategoryProds()}>
                     <View style={styles.categoryContainer}>
                       <Image
                         source={require('assets/exoticMixes.png')}
@@ -137,7 +159,7 @@ export default class Home extends Component {
                     </View>
                   </TouchableOpacity>
                   {/* Nature Beauty */}
-                  <TouchableOpacity>
+                  <TouchableOpacity onPress={() => this.toggleCategoryProds()}>
                     <View style={styles.categoryContainer}>
                       <Image
                         source={require('assets/natureBeauty.png')}
@@ -149,7 +171,7 @@ export default class Home extends Component {
                 {/* Row two of collections categories */}
                 <View style={styles.collectionsRow}>
                   {/* Global Treasure */}
-                  <TouchableOpacity>
+                  <TouchableOpacity onPress={() => this.toggleCategoryProds()}>
                     <View style={styles.categoryContainer}>
                       <Image
                         source={require('assets/globalTreasure.png')}
@@ -158,7 +180,7 @@ export default class Home extends Component {
                     </View>
                   </TouchableOpacity>
                   {/* Heritage Touch */}
-                  <TouchableOpacity>
+                  <TouchableOpacity onPress={() => this.toggleCategoryProds()}>
                     <View style={styles.categoryContainer}>
                       <Image
                         source={require('assets/heritageTouch.png')}
