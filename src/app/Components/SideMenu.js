@@ -19,6 +19,14 @@ class SideMenu extends Component {
         title: 'Settings & Preferences',
         navigationPath: 'Third'
       },
+      lamps: {
+        title: 'Lamps',
+        navigationPath: 'Twelfth'
+      },
+      sideTables: {
+        title: 'Side Tables',
+        navigationPath: 'Twelfth'
+      },
       aboutUs: {
         title: 'About Us',
         navigationPath: 'Fifth'
@@ -76,14 +84,14 @@ class SideMenu extends Component {
             <Text style={styles.section}>
               Collections
             </Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={this.navigateToScreen(this.options.lamps.navigationPath)}>
               <Text style={styles.title}>
-                Lamps
+                {this.options.lamps.title}
               </Text>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={this.navigateToScreen(this.options.sideTables.navigationPath)}>
               <Text style={styles.title}>
-                Side Tables
+                {this.options.sideTables.title}
               </Text>
             </TouchableOpacity>
 
