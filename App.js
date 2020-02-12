@@ -18,6 +18,8 @@ import LoginSignup from 'app/LoginSignup/LoginSignup.js';
 import SearchPage from 'app/SearchPage/SearchPage.js';
 import ForgotPassword from 'app/LoginSignup/ForgotPassword.js';
 import ShoppingCart from 'app/ShoppingCart/ShoppingCart.js';
+import CategoryProducts from 'app/Collections/CategoryProducts.js';
+import ProductPage from 'app/Collections/ProductPage.js'
 
 // Imports custom drawer
 import SideMenu from 'app/Components/SideMenu.js'
@@ -141,6 +143,26 @@ const EleventhActivity_StackNavigator = createStackNavigator({
   },
 });
 
+// Stack Navigator for the category products page
+const TwelfthActivity_StackNavigator = createStackNavigator({
+  Twelfth: {
+    screen: CategoryProducts,
+    navigationOptions: {
+      headerShown: false
+    }
+  },
+});
+
+// Stack Navigator for the product page page
+const ThirtheenthActivity_StackNavigator = createStackNavigator({
+  Thirtheenth: {
+    screen: ProductPage,
+    navigationOptions: {
+      headerShown: false
+    }
+  },
+});
+
 // Drawer menu options
 const Drawer = createDrawerNavigator(
   {
@@ -155,7 +177,9 @@ const Drawer = createDrawerNavigator(
     NavScreen8: { screen: EigthActivity_StackNavigator },
     NavScreen9: { screen: NinthActivity_StackNavigator },
     NavScreen10: { screen: TenthActivity_StackNavigator },
-    NavScreen11: { screen: EleventhActivity_StackNavigator}
+    NavScreen11: { screen: EleventhActivity_StackNavigator },
+    NavScreen12: { screen: TwelfthActivity_StackNavigator },
+    NavScreen13: { screen: ThirtheenthActivity_StackNavigator }
   },
   {
     //For the Custom sidebar menu we have to provide our CustomSidebarMenu
