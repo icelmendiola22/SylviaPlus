@@ -10,6 +10,8 @@ import DrawerButton from 'app/Components/DrawerButton.js';
 import HeaderLogo from 'app/Components/HeaderLogo.js';
 import SearchBarIcon from 'app/Components/SearchBarIcon.js';
 import ShoppingCartIcon from 'app/Components/ShoppingCartIcon.js';
+// Import data for Bestsellers section
+import BestsellersData from 'app/Home/BestsellersData.js';
 
 // Get width of iPhone/Android screen
 var width = Dimensions.get('window').width;
@@ -28,6 +30,18 @@ export default class Home extends Component {
   toggleCart = () => {
     this.props.navigation.navigate('Eleventh');
   };
+  // Renders cards under Bestsellers section
+  _renderBestsellers(item) {
+      return (
+        <View style={styles.cardContainer}>
+          <View style={styles.card}>
+            <Image source={item.img} style={styles.cardImage} />
+            <Text style={styles.cardTitle}>{item.name}</Text>
+            <Text style={styles.cardPrice}>{item.price}</Text>
+          </View>
+        </View>
+      );
+  }
 
   render () {
     return (
@@ -154,12 +168,17 @@ export default class Home extends Component {
                   </TouchableOpacity>
                 </View>
                 {/* Fourth flex column for Bestsellers title */}
-                <View style={{marginVertical: 10, backgroundColor: 'yellow'}}>
+                <View style={{marginVertical: 10}}>
                   <Text style={styles.sectionTitle}>Bestsellers</Text>
                 </View>
-                {/* Bestsellers slider */}
-                <View>
-                </View>
+                {/* Bestsellers horizontal ScrollView */}
+                <ScrollView
+                  horizontal
+                  showsHorizontalScrollIndicator='false'>
+                  {BestsellersData.map(item => {
+                    return this._renderBestsellers(item);
+                  })}
+                </ScrollView>
               </View>
             </ScrollView>
           </View>
@@ -170,7 +189,6 @@ export default class Home extends Component {
 }
 
 const styles = StyleSheet.create({
-  // Not using this style so might need to delete later on
   mainContainer: {
     backgroundColor: 'white',
     flex: 1
@@ -253,4 +271,39 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
     color: '#636363'
   },
+  card: {
+    backgroundColor: 'white',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 173,
+    marginEnd: 17,
+    borderRadius: 8,
+    borderWidth: 2,
+    borderColor: '#F2F2F2',
+    marginBottom: 30
+  },
+  cardContainer: {
+    justifyContent: 'center'
+  },
+  cardImage: {
+    width: 170,
+    height: 180,
+    backgroundColor: '#F2F2F2',
+    borderTopLeftRadius: 8,
+    borderTopRightRadius: 8,
+    resizeMode: 'center'
+  },
+  cardPrice: {
+    color: '#636363',
+    fontStyle: 'italic',
+    fontSize: 15,
+    marginTop: 8,
+    marginBottom: 30
+  },
+  cardTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginTop: 30
+  }
 });
