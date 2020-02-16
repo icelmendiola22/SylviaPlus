@@ -12,7 +12,7 @@ import ShoppingCartIcon from 'app/Components/ShoppingCartIcon.js';
 var width = Dimensions.get('window').width;
 var height = Dimensions.get('window').height;
 
-export default class Profile extends Component {
+export default class MyAccount extends Component {
   // toggleDrawer is a static function that controls the drawer menu button
   toggleDrawer = () => {
     this.props.navigation.toggleDrawer();
