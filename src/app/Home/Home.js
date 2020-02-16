@@ -164,7 +164,7 @@ export default class Home extends Component {
                       <Image
                         source={require('assets/natureBeauty.png')}
                       />
-                      <Text style={{fontStyle: 'italic', alignSelf: 'flex-start', color: '#636363'}}>Nature Beauty</Text>
+                      <Text style={styles.categoryText}>Nature Beauty</Text>
                     </View>
                   </TouchableOpacity>
                 </View>
@@ -190,9 +190,7 @@ export default class Home extends Component {
                   </TouchableOpacity>
                 </View>
                 {/* Fourth flex column for Bestsellers title */}
-                <View style={{marginVertical: 10}}>
-                  <Text style={styles.sectionTitle}>Bestsellers</Text>
-                </View>
+                <Text style={styles.sectionTitle}>Bestsellers</Text>
                 {/* Bestsellers horizontal ScrollView */}
                 <ScrollView
                   horizontal
@@ -257,16 +255,17 @@ const styles = StyleSheet.create({
   },
   collectionsTitleContainer: {
     flexDirection: 'row',
-    marginVertical: 10,
     justifyContent: 'space-between'
   },
   sectionTitle: {
     fontSize: 25,
     fontWeight: 'bold',
-    color: '#636363'
+    color: '#636363',
+    marginVertical: 10
   },
   flexDirRow: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    marginTop: 20
   },
   viewMoreText: {
     fontSize: 13

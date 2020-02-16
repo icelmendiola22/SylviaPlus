@@ -75,7 +75,7 @@ export default class LoginSignup extends Component {
           <View style={styles.scrollContainer}>
             <ScrollView>
               <View syle={styles.bodyContainer}>
-                <View style={styles.test}>
+                <View style={styles.controlTab}>
                   {/* Log In and Sign up control tab */}
                   <SegmentedControlTab
                     values={['Log In', 'Sign Up']}
@@ -185,7 +185,8 @@ export default class LoginSignup extends Component {
 
 const styles = StyleSheet.create({
   mainContainer: {
-    flex: 1
+    flex: 1,
+    backgroundColor: 'white'
   },
   headerContainer: {
     height: 50
@@ -212,13 +213,14 @@ const styles = StyleSheet.create({
   },
   scrollContainer: {
     height: height,
-    paddingBottom: 75
+    paddingBottom: 75,
+    backgroundColor: '#F2F2F2'
   },
   bodyContainer: {
     flex: 1,
     flexDirection: 'column'
   },
-  test: {
+  controlTab: {
     backgroundColor: 'white',
     marginVertical: 45,
     marginHorizontal: 20,

@@ -102,7 +102,8 @@ export default class ForgotPassword extends Component {
 
 const styles = StyleSheet.create({
   mainContainer: {
-    flex: 1
+    flex: 1,
+    backgroundColor: 'white'
   },
   headerContainer: {
     height: 50
@@ -129,7 +130,8 @@ const styles = StyleSheet.create({
   },
   scrollContainer: {
     height: height,
-    paddingBottom: 75
+    paddingBottom: 75,
+    backgroundColor: '#F2F2F2'
   },
   bodyContainer: {
     flex: 1,
