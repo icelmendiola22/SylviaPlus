@@ -166,14 +166,14 @@ const styles = StyleSheet.create({
     width: width/2 -10,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#F4F4F4',
+    backgroundColor: '#F2F2F2',
     borderRightWidth: 1
   },
   rightCategory: {
     width: width/2 - 10,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#F4F4F4'
+    backgroundColor: '#F2F2F2'
   },
   imageMargin: {
     marginVertical: 20
