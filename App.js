@@ -40,7 +40,7 @@ const FirstActivity_StackNavigator = createStackNavigator({
 const SecondActivity_StackNavigator = createStackNavigator({
   //All the screen from the My Account Option will be indexed here
   Second: {
-    screen: MyAcount,
+    screen: MyAccount,
     navigationOptions: {
       headerShown: false
     }
