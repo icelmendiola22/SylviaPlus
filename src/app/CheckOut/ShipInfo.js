@@ -19,6 +19,8 @@ export default class Ship extends Component {
   this.props.navigation.toggleDrawer();
 };
 
+
+
 render() {
   return (
     <SafeAreaView style={styles.mainContainer}>
@@ -121,8 +123,9 @@ mainContainer: {
   marginTop: Constants.statusBarHeight,
 },
 headerContainer: {
-  height: 50,
-  //borderBottomColor: '#636363',
+  height: 45,
+  borderBottomWidth: 0.22,
+  borderBottomColor: '#636363',
 },
 txtContainer: {
   height: 40,
@@ -145,8 +148,8 @@ bodyContainer: {
 navContainer : {
   flexDirection: 'row',
   justifyContent: 'flex-start',
-  //borderTopColor: '#636363',
   left: 9,
+  marginTop: 2,
 },
 scrollView: {
   marginHorizontal: 20,
@@ -158,7 +161,7 @@ headerFlexRow: {
 menuIcon: {
   width: width / 8,
   height: 50,
-  top: 20,
+  top: 12,
 },
 logoHeader: {
   width: width/8 * 5,
@@ -187,12 +190,10 @@ title: {
 subHeader: {
   position: 'absolute',
   width: 173,
-  height: 25,
+  height: 50,
   left: 14,
   top: 20,
-  fontWeight: 'normal',
   fontSize: 16 ,
-  height: 18 ,
   color: '#000000',
   },
 txt: {
@@ -208,7 +209,7 @@ navTxt : {
   fontSize: 11,
   letterSpacing: 0.01,
   color: '#828181',
-  height: 12,
+  height: 15,
 
   //left: 10,
   //paddingLeft: 10,
@@ -225,20 +226,21 @@ inputText2: {
   bottom: 10
 },
 inputText3: {
-  marginLeft: 10,
+  marginLeft: 8,
   bottom: 15
 },
 txtBox: {
   position: "absolute",
-  fontSize: 18,
-  height: 24,
+  fontSize: 20,
+  height: 25,
   alignContent: "center",
-  left: 100,
-  top: 10,
+  left: width/9 * 2,
+  top: 20,
+  color: 'white',
 },
 boxButton: {
   width: width/8*7,
-  height: 49,
+  height: 75,
   borderColor: "#CAC1C1",
   borderWidth: 1,
   borderRadius: 10,
