@@ -193,7 +193,7 @@ export default class Home extends Component {
                 <Text style={styles.sectionTitle}>Bestsellers</Text>
                 {/* Bestsellers horizontal ScrollView */}
                 <ScrollView
-                  horizontal='false'
+                  horizontal
                   showsHorizontalScrollIndicator='false'>
                   {BestsellersData.map(item => {
                     return this._renderBestsellers(item);

@@ -9,7 +9,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 // Imports for screen screens
 import Home from 'app/Home/Home.js';
 import MyAccount from 'app/Profile/MyAccount.js';
-import SetsAndPrefs from 'app/Settings/SettingsAndPreferences.js';
+import SetsAndPrefs from 'app/Profile/SettingsAndPreferences.js';
 import Collections from 'app/Collections/Collections.js';
 import AboutUs from 'app/AboutUs/AboutUs.js';
 import ContactUs from 'app/AboutUs/ContactUs.js';
@@ -20,7 +20,6 @@ import ForgotPassword from 'app/LoginSignup/ForgotPassword.js';
 import ShoppingCart from 'app/ShoppingCart/ShoppingCart.js';
 import CategoryProducts from 'app/Collections/CategoryProducts.js';
 import ProductPage from 'app/Collections/ProductPage.js';
-import ShippingPage from 'app/CheckOut/ShipInfo.js'
 
 // Imports custom drawer
 import SideMenu from 'app/Components/SideMenu.js'
@@ -41,7 +40,7 @@ const FirstActivity_StackNavigator = createStackNavigator({
 const SecondActivity_StackNavigator = createStackNavigator({
   //All the screen from the My Account Option will be indexed here
   Second: {
-    screen: MyAccount,
+    screen: MyAcount,
     navigationOptions: {
       headerShown: false
     }
@@ -164,16 +163,6 @@ const ThirtheenthActivity_StackNavigator = createStackNavigator({
   },
 });
 
-// Stack Navigator for the product page page
-const FourtheenthActivity_StackNavigator = createStackNavigator({
-  Fourtheenth: {
-    screen: ShippingPage,
-    navigationOptions: {
-      headerShown: false
-    }
-  },
-});
-
 // Drawer menu options
 const Drawer = createDrawerNavigator(
   {
@@ -190,8 +179,7 @@ const Drawer = createDrawerNavigator(
     NavScreen10: { screen: TenthActivity_StackNavigator },
     NavScreen11: { screen: EleventhActivity_StackNavigator },
     NavScreen12: { screen: TwelfthActivity_StackNavigator },
-    NavScreen13: { screen: ThirtheenthActivity_StackNavigator },
-    NavScreen14: { screen: FourtheenthActivity_StackNavigator }
+    NavScreen13: { screen: ThirtheenthActivity_StackNavigator }
   },
   {
     //For the Custom sidebar menu we have to provide our CustomSidebarMenu
