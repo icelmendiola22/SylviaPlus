@@ -26,7 +26,7 @@ export default class AboutUs extends Component {
   }
   render () {
     return (
-      <View style={{backgroundColor: 'white', flex: 1}}>
+      <View style={styles.mainContainer}>
         <SafeAreaView>
           {/* Header */}
           <View style={styles.headerContainer}>
@@ -61,7 +61,7 @@ export default class AboutUs extends Component {
                 style={styles.backgroundImage}
               >
                 <ScrollView>
-                  <View style={{marginHorizontal: 10}}>
+                  <View style={styles.bodyMargin}>
                     <View style={styles.titleContainer}>
                       <Text style={styles.title}>About Us</Text>
                       <Text style={styles.quote}>“Home is where our heart is”</Text>
@@ -102,7 +102,7 @@ export default class AboutUs extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  mainContainer: {
     flex: 1,
     backgroundColor: 'white',
     paddingTop: Constants.statusBarHeight
@@ -139,6 +139,9 @@ const styles = StyleSheet.create({
   bodyContainer: {
     flex: 1,
     flexDirection: 'column',
+  },
+  bodyMargin: {
+    marginHorizontal: 10
   },
   backgroundImage: {
     flex: 1,
