@@ -17,7 +17,6 @@ export default class AccountIcon extends Component {
 
 const styles = StyleSheet.create({
   icon: {
-    color: 'rgba(0, 0, 0, 0.54)',
-    right: 10
+    color: 'rgba(0, 0, 0, 0.54)'
   }
 })

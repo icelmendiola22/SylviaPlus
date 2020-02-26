@@ -16,7 +16,6 @@ export default class AccountIcon extends Component {
 const styles = StyleSheet.create({
   icon: {
     width: 35,
-    height: 35,
-    left: 10
+    height: 35
   }
 })
