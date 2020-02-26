@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 import {ScrollView, Text, View, StyleSheet, TouchableOpacity, SafeAreaView, Dimensions} from "react-native";
-import { Icon, Input  } from 'react-native-elements';
+import { Icon, Input } from 'react-native-elements';
 import { NavigationActions } from "react-navigation";
 import Constants from 'expo-constants';
+// Import components for header
 import DrawerButton from "app/Components/DrawerButton.js";
 import HeaderLogo from "app/Components/HeaderLogo.js";
 import SearchBarIcon from "app/Components/SearchBarIcon.js";
 import ShoppingCartIcon from "app/Components/ShoppingCartIcon.js";
+// Import body icons
+import AccountIcon from 'app/Components/AccountIcon.js';
+import SettingsIcon from 'app/Components/SettingsIcon.js'
 
 // Get width of iPhone/Android screen
 var width = Dimensions.get('window').width;
@@ -16,6 +20,14 @@ export default class Setting extends Component {
    // toggleDrawer is a static function that controls the drawer menu button
    toggleDrawer = () => {
     this.props.navigation.toggleDrawer();
+  };
+  // toggleMyAccount is a static function that navigates to the My Account page
+  toggleMyAccount = () => {
+    this.props.navigation.navigate('Second');
+  };
+  // toggleSetsAndPrefs is a static function that navigates to the Settings and Preferences page
+  toggleSetsAndPrefs = () => {
+    this.props.navigation.navigate('Third');
   };
   // toggleSearch is a static function that navigates to the search page
   toggleSearch = () => {
@@ -37,7 +49,6 @@ export default class Setting extends Component {
   toggleCollections = () => {
     this.props.navigation.navigate('Fourth');
   };
-
   // toggleCheckOut is a static function that navigates to the checkout page
   toggleCheckOut = () => {
     this.props.navigation.navigate('Fourtheenth');
@@ -68,52 +79,51 @@ export default class Setting extends Component {
           </View>
         </View>
 
-        <View style={styles.title}>
-          <Text style={styles.title}>Setting and Preferences </Text>
-        </View>
-
-        <View style={styles.bodyContainer}>
-          <TouchableOpacity style={styles.txtContainer}>
-            <Text style={styles.txt}>Preferences</Text>
-            <Icon style={styles.arrowIcon} name='arrow-forward' type='MaterialIcons'  />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.txtContainer}>
-            <Text style={styles.txt}>Orders and Returns</Text>
-            <Icon style={styles.arrowIcon} name='arrow-forward' type='MaterialIcons'  />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.txtContainer}>
-            <Text style={styles.txt}>Change Account Information</Text>
-            <Icon style={styles.arrowIcon} name='arrow-forward' type='MaterialIcons'  />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => this.toggleCheckOut()} style={styles.boxButton} >
-            <Text style={styles.txtBox}>Log Out</Text>
-          </TouchableOpacity>
+        <View style={styles.scrollContainer}>
+          <ScrollView>
+            <View style={styles.bodyContainer}>
+              <View style={styles.titleContainer}>
+                <TouchableOpacity onPress={() => this.toggleMyAccount()}>
+                  <AccountIcon />
+                </TouchableOpacity>
+                <Text style={styles.title}>Settings & Preferences</Text>
+                <TouchableOpacity style={{borderBottomWidth: 1}} onPress={() => this.toggleSetsAndPrefs()}>
+                  <SettingsIcon />
+                </TouchableOpacity>
+              </View>
+              <TouchableOpacity style={styles.optionContainer}>
+                <Text style={styles.optionTxt}>Preferences</Text>
+                <Icon name='arrow-forward' type='MaterialIcons'  />
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.optionContainer}>
+                <Text style={styles.optionTxt}>Orders & Returns</Text>
+                <Icon name='arrow-forward' type='MaterialIcons'  />
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.optionContainer}>
+                <Text style={styles.optionTxt}>Change Account Information</Text>
+                <Icon name='arrow-forward' type='MaterialIcons'  />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => this.toggleCheckOut()} style={styles.logOutButton} >
+                <Text style={styles.logOutTxt}>Log Out</Text>
+              </TouchableOpacity>
+            </View>
+          </ScrollView>
         </View>
       </SafeAreaView>
     </View>
     );
   }
 }
+
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    backgroundColor: '#E5E5E5',
+    backgroundColor: 'white',
     paddingTop: Constants.statusBarHeight,
   },
   headerContainer: {
     height: 50,
-    backgroundColor: '#F4F4F4',
-  },
-  txtContainer: {
-    flexDirection:'row',
-    height: 40,
-    width: width,
-    marginTop: 18,
-    backgroundColor: '#F4F4F4',
-    borderBottomColor: '#CAC1C1',
-    borderBottomWidth: 1,
-    borderTopColor: '#CAC1C1',
-    borderTopWidth: 1,
+    backgroundColor: 'white',
   },
   headerFlexRow: {
     flex: 1,
@@ -127,8 +137,7 @@ const styles = StyleSheet.create({
     width: width/8 * 5,
     height: 50,
     alignItems: 'center',
-    justifyContent: 'center',
-    left: 12,
+    justifyContent: 'center'
   },
   searchCartIcon: {
     width: width/8 * 2,
@@ -136,45 +145,61 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-end'
   },
-  arrowIcon: {
-    width: width/8,
-    justifyContent: 'flex-end',
-  },
-  title: {
-    fontFamily: "serif",
-    fontWeight: "bold",
-    fontSize: 28,
-    height: 40,
-    alignItems: "center", 
-    color: '#636363',
-    top: 5,
+  scrollContainer: {
+    height: height,
+    paddingBottom: 75,
+    backgroundColor: '#F4F4F4'
   },
   bodyContainer: {
-    top: 100,
-    position:'absolute',
-  },  
-  txt: {
-    fontFamily: "serif",
+    flex: 1,
+    flexDirection: 'column',
+  },
+  titleContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 20,
+    marginHorizontal: 10
+  },
+  title: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    color: '#636363',
+    alignSelf: 'center'
+  },
+  optionContainer: {
+    flexDirection:'row',
+    height: 40,
+    justifyContent: 'space-between',
+    width: width,
+    marginTop: 25,
+    backgroundColor: 'white',
+    borderBottomColor: '#CAC1C1',
+    borderTopColor: '#CAC1C1',
+    borderBottomWidth: 1,
+    borderTopWidth: 1,
+    paddingHorizontal: 10,
+    alignItems: 'center'
+  },
+  optionTxt: {
     fontWeight: "bold",
     fontSize: 18,
-    letterSpacing: 0.01,
-    color: "#636363",
+    color: "#636363"
   },
-  txtBox: {
-    fontSize: 18,
-    height: 24,
-    alignContent: "center",
-    position: "absolute",
-    left: 150,
-    top: 10
-  },
-  boxButton: {
-    height: 49,
+  logOutButton: {
+    height: 60,
+    width: width/2,
     borderColor: "#CAC1C1",
     borderWidth: 1,
-    borderRadius: 7,
-    marginVertical: 10,
-    marginHorizontal: 20,
-    backgroundColor: '#F4F4F4'
+    borderRadius: 10,
+    marginTop: 50,
+    alignSelf: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
+  },
+  logOutTxt: {
+    fontSize: 23,
+    color: '#636363',
+    fontWeight: 'bold'
   },
 });
