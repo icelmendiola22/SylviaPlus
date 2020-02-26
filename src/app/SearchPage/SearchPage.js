@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput} from 'react-native';
+import Constants from 'expo-constants';
 import BackButton from 'app/Components/BackButton.js'
 import { SearchBar } from 'react-native-elements';
 import SearchBarIcon from 'app/Components/SearchBarIcon.js';
@@ -15,13 +16,13 @@ export default class SearchPage extends React.Component {
     state = {
         search: '',
       };
-    
+
       updateSearch = search => {
         this.setState({ search });
       };
-    
 
-    
+
+
   render () {
     const { search } = this.state;
     const { customStyleIndex } = this.state;
@@ -40,14 +41,15 @@ export default class SearchPage extends React.Component {
         <SearchBarIcon />
       </View>
     </View>
-    
+
     );
   }
 }
 
 const styles = StyleSheet.create({
-    container: {
-    flex: 1
+  container: {
+    flex: 1,
+    paddingTop: Constants.statusBarHeight
   },
   inputBox: {
     height: 40,
