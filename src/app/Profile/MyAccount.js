@@ -18,6 +18,10 @@ export default class MyAccount extends Component {
   toggleDrawer = () => {
     this.props.navigation.toggleDrawer();
   };
+  // toggleMyAccount is a static function that navigates to the My Account page
+  toggleMyAccount = () => {
+    this.props.navigation.navigate('Second');
+  };
   // toggleSetsAndPrefs is a static function that navigates to the Settings and Preferences page
   toggleSetsAndPrefs = () => {
     this.props.navigation.navigate('Third');
@@ -70,7 +74,9 @@ export default class MyAccount extends Component {
               <View style={styles.bodyContainer}>
                 {/* Title and icons */}
                 <View style={styles.titleContainer}>
-                  <AccountIcon />
+                  <TouchableOpacity style={{borderBottomWidth: 1}} onPress={() => this.toggleMyAccount()}>
+                    <AccountIcon />
+                  </TouchableOpacity>
                   <Text style={styles.title}>My Account</Text>
                   <TouchableOpacity onPress={() => this.toggleSetsAndPrefs()}>
                     <SettingsIcon />
@@ -188,7 +194,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop: 20,
-    marginBottom: 10
+    marginBottom: 10,
   },
   title: {
     fontSize: 30,
