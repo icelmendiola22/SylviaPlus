@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions, SafeAreaView, ScrollView } from 'react-native';
 import { NavigationActions } from 'react-navigation';
+import Constants from 'expo-constants';
 // Import Swiper for image carousel on top of page
 import Swiper from 'react-native-web-swiper';
 // Import Ionicons for icons
@@ -193,11 +194,13 @@ export default class Home extends Component {
                 <Text style={styles.sectionTitle}>Bestsellers</Text>
                 {/* Bestsellers horizontal ScrollView */}
                 <ScrollView
-                  horizontal='false'
+                  horizontal
                   showsHorizontalScrollIndicator='false'>
-                  {BestsellersData.map(item => {
-                    return this._renderBestsellers(item);
-                  })}
+                  <View style={{flexDirection: 'row'}}>
+                    {BestsellersData.map(item => {
+                      return this._renderBestsellers(item);
+                    })}
+                  </View>
                 </ScrollView>
               </View>
             </ScrollView>
@@ -211,7 +214,8 @@ export default class Home extends Component {
 const styles = StyleSheet.create({
   mainContainer: {
     backgroundColor: 'white',
-    flex: 1
+    flex: 1,
+    paddingTop: Constants.statusBarHeight
   },
   headerContainer: {
     height: 50
