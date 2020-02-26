@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {ScrollView, Text, View, StyleSheet, TouchableOpacity, SafeAreaView, Dimensions} from "react-native";
+import { Text, View, StyleSheet, TouchableOpacity, SafeAreaView, ScrollView, Dimensions} from "react-native";
 import { Icon, Input } from 'react-native-elements';
 import { NavigationActions } from "react-navigation";
 import Constants from 'expo-constants';
