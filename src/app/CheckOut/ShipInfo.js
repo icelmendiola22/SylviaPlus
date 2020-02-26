@@ -24,7 +24,7 @@ export default class Ship extends Component {
 render() {
   return (
     <SafeAreaView style={styles.mainContainer}>
-      <ScrollView>  
+      <ScrollView>
       <View style={styles.headerContainer}>
         <View style={styles.headerFlexRow}>
           <View style={styles.menuIcon}>
@@ -57,7 +57,7 @@ render() {
       <View style={styles.subHeaderContainer}>
        <Text style={styles.subHeader}> Shipping Information</Text>
       </View>
-      
+
       <View style={styles.bodyContainer}>
         <View style={styles.inputBox}>
           <TextInput style={styles.inputText}
@@ -71,7 +71,7 @@ render() {
         </View>
         <View style={styles.inputBox}>
           <TextInput style={styles.inputText}
-            placeholder="Address" 
+            placeholder="Address"
           />
         </View>
         <View style={styles.inputBox}>
@@ -83,25 +83,25 @@ render() {
           <TextInput style={styles.inputText}
             placeholder="City"
           />
-        </View>  
+        </View>
         <View style={styles.inputBox}>
           <TextInput style={styles.inputText2}
             placeholder="Country/Region"
           />
             <Text style={styles.inputText3}> United States </Text>
-        </View>  
+        </View>
         <View style={styles.inputBox}>
           <TextInput style={styles.inputText2}
             placeholder="State"
           />
           <Text style={styles.inputText3}> California </Text>
-        </View>  
+        </View>
         <View style={styles.inputBox}>
           <TextInput style={styles.inputText}
             placeholder="Zip code"
           />
-      </View>  
-      
+      </View>
+
       <View style={{flexDirection: 'row', left: 20}}>
         <Icon name='check-box-outline-blank' type='MaterialIcons'/>
         <Text style={styles.txt}> Save this information for next time</Text>
@@ -111,8 +111,8 @@ render() {
           <Text style={styles.txtBox}>Continue to Shipping</Text>
         </TouchableOpacity>
       </View>
-    </View> 
-    </ScrollView> 
+    </View>
+    </ScrollView>
     </SafeAreaView>
   );
 }
@@ -144,7 +144,7 @@ subHeaderContainer: {
 bodyContainer: {
   flex: 1,
   top: 30,
-},  
+},
 navContainer : {
   flexDirection: 'row',
   justifyContent: 'flex-start',
@@ -181,10 +181,9 @@ arrowIcon: {
   alignItems: 'center',
 },
 title: {
-  fontFamily: "serif",
   fontWeight: "bold",
   fontSize: 20,
-  alignItems: "center", 
+  alignItems: "center",
   color: '#636363',
 },
 subHeader: {
@@ -220,9 +219,9 @@ inputText: {
   height: 49
 },
 inputText2: {
-  marginLeft: 10, 
-  marginTop: 4, 
-  marginBottom: 0, 
+  marginLeft: 10,
+  marginTop: 4,
+  marginBottom: 0,
   bottom: 10
 },
 inputText3: {
