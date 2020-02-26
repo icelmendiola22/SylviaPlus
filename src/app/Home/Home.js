@@ -196,11 +196,9 @@ export default class Home extends Component {
                 <ScrollView
                   horizontal
                   showsHorizontalScrollIndicator='false'>
-                  <View style={{flexDirection: 'row'}}>
-                    {BestsellersData.map(item => {
-                      return this._renderBestsellers(item);
-                    })}
-                  </View>
+                  {BestsellersData.map(item => {
+                    return this._renderBestsellers(item);
+                  })}
                 </ScrollView>
               </View>
             </ScrollView>
