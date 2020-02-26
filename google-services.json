@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "208880216578",
+    "firebase_url": "https://sylvia-plus.firebaseio.com",
+    "project_id": "sylvia-plus",
+    "storage_bucket": "sylvia-plus.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208880216578:android:e72e439293e4ccb800151b",
+        "android_client_info": {
+          "package_name": "io.sylviaplus.EcomApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "208880216578-r8i1vkit4l93cs04pikvihe2bjm5vuf2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCM1kS7aj05dDzAKi25QQwFeW9q8Mi5d0g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "208880216578-r8i1vkit4l93cs04pikvihe2bjm5vuf2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "208880216578-phmca3aktcrtduk95fep7ba5ohgj14ij.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "SylviaPlus-RNative-01"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
